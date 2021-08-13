@@ -72,7 +72,9 @@ const CodeSnippet = ({ key, title, tags, code }) => {
                   )}
                 </span>
                 {show && data[key] === ikey ? (
-                  <pre className=" mt-4 card-body App-header">{data[code]}</pre>
+                  <pre className="container mt-4 card-body App-header">
+                    {data[code]}
+                  </pre>
                 ) : null}
               </div>
             </div>
