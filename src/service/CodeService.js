@@ -1,9 +1,49 @@
 export const codes = [
   {
+    key: "code3",
+    title: "Vector of Vector - Demo",
+    tags: [
+      "vector",
+      "2D",
+      "decleration",
+      "initialisation",
+      "foreach loop",
+      "output",
+    ],
+    code: `
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+  // 2D vector
+  vector<vector<int>> array = {
+      {0, 2, 3},
+      {4, 5, 6},
+      {7, 8, 9, 10},
+      {11, 12}
+  };
+
+  // increment at particular position
+  array[0][0] += 10;
+
+  // printing the 2D array
+  // normal for loop
+  for(int index = 0; index < array.size(); index++){
+      // for each loop
+      for(int number: array[index] )
+          cout << number << ',';
+      cout << endl;
+  }
+  return 0;
+}
+    `,
+  },
+  {
     key: "code2",
     title: "Vector STL - Demo",
     tags: [
       "vector",
+      "1D",
       "size",
       "capacity",
       "memory allocate",
@@ -74,31 +114,31 @@ int main(){
     title: "Array Decleration Types",
     tags: ["array", "decleration"],
     code: `
-          #include <iostream>
-          #include <string>
-          using namespace std;
+#include <iostream>
+#include <string>
+using namespace std;
 
-          int main(){
-            cout<< "Program starts " << endl;
-            
-            // decleration of array
-            int a[100]; // garbage values
-            int b [100] = {0}; // all 0
-            int c [100] = {1,2,3}; // 1 2 3 rest (97 => 0)
-            int d[] = {1, 2, 3}; // only => 1 2 3
+int main(){
+  cout<< "Program starts " << endl;
+  
+  // decleration of array
+  int a[100]; // garbage values
+  int b [100] = {0}; // all 0
+  int c [100] = {1,2,3}; // 1 2 3 rest (97 => 0)
+  int d[] = {1, 2, 3}; // only => 1 2 3
 
-            // printing array 
-            cout << a << endl; // 0xe12a1ff720
-            cout << b << endl; // 0xe12a1ff590
-            cout << c << endl; // 0xe12a1ff400
-            cout << d << endl; // 0xe12a1ff3f4
+  // printing array 
+  cout << a << endl; // 0xe12a1ff720
+  cout << b << endl; // 0xe12a1ff590
+  cout << c << endl; // 0xe12a1ff400
+  cout << d << endl; // 0xe12a1ff3f4
 
-            // print array output
-            for (const int &n: d){
-                cout << n << " ";
-            }
-            return 0;
-        }
+  // print array output
+  for (const int &n: d){
+      cout << n << " ";
+  }
+  return 0;
+}
     `,
   },
 ];

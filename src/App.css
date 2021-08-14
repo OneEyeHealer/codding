@@ -1,9 +1,12 @@
+main.main {
+  min-height: 80.7vh;
+}
 .pointer {
   cursor: pointer;
 }
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -68,4 +71,17 @@ input[type="text"]:focus {
   border-radius: 15px !important;
   border-color: none !important;
   box-shadow: none;
+}
+footer {
+  background: var(--footer-bg);
+  padding: 1em 0;
+}
+.creator-name {
+  text-decoration: none;
+  margin: 0 5px;
+  color: blanchedalmond;
+}
+.creator-name:hover,
+.creator-name:focus {
+  color: rgb(245, 196, 122);
 }

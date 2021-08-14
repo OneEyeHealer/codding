@@ -1,15 +1,17 @@
 import "./App.css";
 import CodeSnippet from "./components/CodeSnippet";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="container codding-bg">
+      <main className="container main">
         <h1 className="text-center">C++ Code List</h1>
         <CodeSnippet />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 }
