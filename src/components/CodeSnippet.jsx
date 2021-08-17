@@ -48,7 +48,7 @@ const CodeSnippet = ({ key, title, tags, code }) => {
                 <h4 className="px-4 text-primary">{data[title]}</h4>
                 <div className="container mb-3">
                   {data[tags].map((tag) => (
-                    <span key={tag} className="mx-1 badge bg-warning">
+                    <span key={tag} className="mx-1 badge bg-warning badge-box">
                       {tag}
                     </span>
                   ))}
@@ -61,13 +61,13 @@ const CodeSnippet = ({ key, title, tags, code }) => {
                   }}
                 >
                   <i className={terminalIcon}></i>
-                  {!show ? (
+                  {show && data[key] === ikey ? (
                     <span className="view-option">
-                      View More <i className={upIcon}></i>
+                      View Less <i className={downIcon}></i>
                     </span>
                   ) : (
                     <span className="view-option">
-                      View Less <i className={downIcon}></i>
+                      View More <i className={upIcon}></i>
                     </span>
                   )}
                 </span>

@@ -1,5 +1,83 @@
 export const codes = [
   {
+    key: "code4",
+    title: "FizzBuzz Exercise",
+    tags: ["exercise", "push", "fizzbuzz", "vector<string>", "output"],
+    code: `
+/* note: 
+    -----FizzBuzz Test-----    
+    write fizzbuzz function which return vector<string> with
+    number from 1 to n write the following restrictions:
+    -> for multiple of 3 store "Fizz" instead of number
+    -> for multiple of 5 store "buzz" instead of number
+    -> for numbers which are multiple of both 3 and 5 
+        store "FizzBuzz"
+    use std::to_string(number) method to convert a number into string.
+
+    "side note on sorting".
+
+    Inbuilt Sort Function:
+      Some problems may require the use of a sorting algorithm, 
+      and I hope you are already familiar with basic sorting algorithms 
+      like Bubble Sort, Selection Sort, Insertion Sort which have O(n^2) complexity. 
+      Better algorithms include Merge Sort, Quick Sort and Heap Sort which 
+      have O(nLogn) complexity.
+
+      For most array problems we can use the inbuilt sort function which also offers 
+      O(nlogn) complexity. This is how you can use the inbuilt sort function in case you 
+      are not aware of. Also depending upon the data in the problem, you may also require 
+      Counting Sort, or Bucket Sort or Radix Sort sometimes.  We will discuss more problems 
+      in Sorting & Searching section.
+
+      Sort an array containing N integers:
+      -> sort(arr, arr +n)
+
+      Sort an vector containing N integers:
+      -> sort(arr.begin(), arr.end())
+*/
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+// function defination
+vector<string> fizzbuzz(int n){
+  vector<string> result;
+  for (int index = 1; index <= n; index++){
+      result.push_back((
+          (index % 15 == 0) 
+          ? "FizzBuzz" 
+          : ((index % 5 == 0) 
+              ? "Buzz" 
+              : ((index % 3 == 0) 
+                  ? "Fizz" 
+                  : to_string(index))) 
+      ));
+      
+      // another approach
+      // if (n % 3 == 0 && n % 5 == 0) result.push_back("FizzBuzz");
+      // else if (n % 5 == 0) result.push_back("Buzz");
+      // else if (n % 3 == 0) result.push_back("Fizz");
+      // else result.push_back(to_string(index));
+  }
+  
+  return result;
+}
+
+// driver code
+int main(){
+  cout << 'FizzBuzz Test' << endl;
+  vector<string> output = fizzbuzz(10);
+  for (string s : output){
+      cout << s << ",";
+  }
+  
+  return 0;
+}
+    `,
+  },
+  {
     key: "code3",
     title: "Vector of Vector - Demo",
     tags: [
@@ -11,10 +89,10 @@ export const codes = [
       "output",
     ],
     code: `
-#include <iostream>
-#include <vector>
-using namespace std;
-int main(){
+  #include <iostream>
+  #include <vector>
+  using namespace std;
+  int main(){
   // 2D vector
   vector<vector<int>> array = {
       {0, 2, 3},
@@ -22,10 +100,10 @@ int main(){
       {7, 8, 9, 10},
       {11, 12}
   };
-
+  
   // increment at particular position
   array[0][0] += 10;
-
+  
   // printing the 2D array
   // normal for loop
   for(int index = 0; index < array.size(); index++){
@@ -35,7 +113,7 @@ int main(){
       cout << endl;
   }
   return 0;
-}
+  }
     `,
   },
   {
