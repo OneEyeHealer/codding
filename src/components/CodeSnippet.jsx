@@ -45,7 +45,9 @@ const CodeSnippet = ({ key, title, tags, code }) => {
                 <div className="title-icon">
                   <i className={codeIcon}></i>
                 </div>
-                <h4 className="px-4 text-primary">{data[title]}</h4>
+                <h4 className="px-4 text-primary">
+                  <a href={`${data.web}`}>{data[title]}</a>
+                </h4>
                 <div className="container mb-3">
                   {data[tags].map((tag) => (
                     <span key={tag} className="mx-1 badge bg-warning badge-box">

@@ -1,6 +1,132 @@
 export const codes = [
   {
+    key: "code7",
+    web: "http://codeforces.com/problemset/problem/617/A",
+    title: "B. Queue at the School",
+    tags: ["800", "math"],
+    code: `
+    #include <iostream>
+    using namespace std;
+     
+    int main(){
+        int x, temp,result = 0, moves[5] = {5, 4, 3, 2, 1};
+        cin >> x;
+        for(int move = 0; move < 5; move++){
+            if( x >= moves[move] ){
+                result += (temp = x/moves[move]);
+                x -=temp*moves[move];
+            }
+        }
+            
+        cout << result <<"\n";
+        return 0;
+    }
+    `,
+  },
+  {
+    key: "code6",
+    web: "http://codeforces.com/problemset/problem/266/B",
+    title: "B. Queue at the School",
+    tags: [
+      "800",
+      "constructive algorithms",
+      "graph matchings",
+      "implementation",
+      "shortest paths",
+    ],
+    code: `
+    #include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstring>
+using namespace std;
+char str[51], s;
+ 
+int main() {
+    int n, t;
+    cin >> n >> t;
+    cin >> str;
+    for (int i = 0; i < t; i++){
+        for (int j = 0; j < n;){
+            if(str[j] == 'B' && str[j+1] == 'G'){
+                s = str[j+1];
+                str[j+1] = str[j];  
+                str[j] = s;
+                j+=2;
+            }
+            else j++;
+        }
+    }
+    cout << str;
+    return 0;
+}
+    `,
+  },
+  {
+    key: "code5",
+    web: "http://codeforces.com/problemset/problem/469/A",
+    title: "A. I Wanna Be the Guy",
+    tags: ["800", "greedy", "implementation"],
+    code: `
+    #include <iostream>
+using namespace std;
+int level[105];
+
+bool search (int arr[], int size, int ele){
+    if (arr[size - 1] == ele)
+        return true;
+    int backup = arr[size-1];
+    arr[size-1] = ele;
+
+    for (int i = 0;;i++){
+        if(arr[i] == ele){
+            arr[size-1] = backup;
+            if(i < size-1)
+                return true;
+            return false;
+        }
+    }
+}
+
+int main() {
+    bool win = false;
+    int n, p, q;
+    cin >> n;
+    
+    cin >> p;
+    
+    for (int i = 0; i < p; i++){
+        cin >> level[i];
+    }
+    
+    cin >> q;
+    
+    for (int i = p; i < p+q; i++){
+        cin >> level[i];
+    }
+    
+    for (int i = 1; i <= n; i++){
+        if (search(level, p+q, i)){
+            win = true;
+        }
+        else{
+            win = false;
+            break;
+        }
+    }
+
+    if (win)
+        cout << "I become the guy." << endl;
+    else
+        cout << "Oh, my keyboard!" << endl;
+
+    return 0;
+}
+    `,
+  },
+  {
     key: "code4",
+    web: "",
     title: "FizzBuzz Exercise",
     tags: ["exercise", "push", "fizzbuzz", "vector<string>", "output"],
     code: `
@@ -79,6 +205,7 @@ int main(){
   },
   {
     key: "code3",
+    web: "",
     title: "Vector of Vector - Demo",
     tags: [
       "vector",
@@ -118,6 +245,7 @@ int main(){
   },
   {
     key: "code2",
+    web: "",
     title: "Vector STL - Demo",
     tags: [
       "vector",
@@ -189,6 +317,7 @@ int main(){
   },
   {
     key: "code1",
+    web: "",
     title: "Array Decleration Types",
     tags: ["array", "decleration"],
     code: `
